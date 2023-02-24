@@ -64,7 +64,7 @@ import 'package:nsmtu_mobile/Presentation/Widgets/MenuBarWidget/MenuBarWidget.da
             ],
           ),
         ),
-        const MenuBarWidget()
+         MenuBarWidget()
       ],
     );
   }
@@ -87,6 +87,6 @@ Widget search(BuildContext context){
 }
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => const Size.fromHeight(100);
+  Size get preferredSize =>  Size.fromHeight(150);
 
 }
