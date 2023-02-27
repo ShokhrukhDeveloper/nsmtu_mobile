@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../Widgets/AccordionWidget/AccordionWidget.dart';
 import '../../Widgets/TopBarWidget/TopBarWidget.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,8 +13,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: TopBar(),
+    return  Scaffold(
+
+      body:SingleChildScrollView(
+        child: Column(
+          children: [
+            TopBar(),
+            AccordionWidget()
+          ],
+        ),
+      )
+
 
     );
   }

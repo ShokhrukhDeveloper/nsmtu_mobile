@@ -2,12 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/MenuBarWidget/MenuBarWidget.dart';
 
-  class TopBar extends StatelessWidget  with PreferredSizeWidget{
+  class TopBar extends StatelessWidget{
   const TopBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    print("");
     return Column(
       children: [
         Padding(
@@ -17,61 +16,65 @@ import 'package:nsmtu_mobile/Presentation/Widgets/MenuBarWidget/MenuBarWidget.da
              const SizedBox(width: 5,),
               const FlutterLogo(),
               const SizedBox(width: 5,),
-              Expanded(child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              Expanded(child: Wrap(
+              alignment: WrapAlignment.spaceAround,
                 children: [
-                  ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.resolveWith((states) {
+
+                  Container(
+                    padding: const EdgeInsets.all(5),
+                    width: 120,
+                    child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.resolveWith(
+                                  (states) {
+                                    return Theme.of(context).primaryColor;
+                                    }),),
+
+
+                        onPressed: (){}, child: Row(
+                      children: const [
+                        Icon(Icons.book),
+                        Text("Moodle")
+                      ],
+
+                    )),
+                  ),
+
+                  Container(
+                    padding: const EdgeInsets.all(5),
+                    width: 120,
+                    child: ElevatedButton(onPressed: (){},
+                        style: ButtonStyle(backgroundColor: MaterialStateProperty.resolveWith((states) {
                           return Theme.of(context).primaryColor;
                         }),),
+                        child: Row(
+                          children: const [
+                            Icon(Icons.fact_check_sharp),
+                            Text("Hemins")
+                          ],
 
-
-                      onPressed: (){}, child: Row(
-                    children: const [
-                      Icon(Icons.book),
-                      Text("Moodle")
-                    ],
-
-                  )),
-                  const SizedBox(width: 5,),
-                  ElevatedButton(onPressed: (){},
-                      style: ButtonStyle(backgroundColor: MaterialStateProperty.resolveWith((states) {
-                        return Theme.of(context).primaryColor;
-                      }),),
-                      child: Row(
-                        children: const [
-                          Icon(Icons.fact_check_sharp),
-                          Text("Hemins")
-                        ],
-
-                      )),
-                  const SizedBox(width: 5,),
-                  if(MediaQuery.of(context).size.width>470)search(context)
+                        )),
+                  ),
+                 
+                  // if(MediaQuery.of(context).size.width>470)
+                    search(context)
                 ],
               )),
-
-
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              if(MediaQuery.of(context).size.width<=470)search(context)
-            ],
-          ),
-        ),
-         MenuBarWidget()
+        Container(
+           width: double.infinity,
+             color: Theme.of(context).primaryColor,
+             child: Center(child: MenuBarWidget())),
       ],
     );
   }
 Widget search(BuildContext context){
-    return SizedBox(
+    return Container(
+      padding: const EdgeInsets.all(5),
       width: 210,
-      height: 30,
+      height: 40,
       child: TextField(
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.only(left: 5,right: 0,top: 0,bottom: 0),
@@ -85,8 +88,7 @@ Widget search(BuildContext context){
       ),
     );
 }
-  @override
-  // TODO: implement preferredSize
-  Size get preferredSize =>  Size.fromHeight(150);
+
+
 
 }
