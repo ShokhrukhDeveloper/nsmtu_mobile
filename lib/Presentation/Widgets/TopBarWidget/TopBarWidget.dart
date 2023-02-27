@@ -20,9 +20,8 @@ import 'package:nsmtu_mobile/Presentation/Widgets/MenuBarWidget/MenuBarWidget.da
               alignment: WrapAlignment.spaceAround,
                 children: [
 
-                  Container(
-                    padding: const EdgeInsets.all(5),
-                    width: 120,
+                  ConstrainedBox(
+                    constraints: const BoxConstraints.expand(width: 120, height:40 ),
                     child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.resolveWith(
@@ -40,9 +39,9 @@ import 'package:nsmtu_mobile/Presentation/Widgets/MenuBarWidget/MenuBarWidget.da
                     )),
                   ),
 
-                  Container(
-                    padding: const EdgeInsets.all(5),
-                    width: 120,
+                  ConstrainedBox(
+                 
+                    constraints: const BoxConstraints.expand(width: 120, height:40 ),
                     child: ElevatedButton(onPressed: (){},
                         style: ButtonStyle(backgroundColor: MaterialStateProperty.resolveWith((states) {
                           return Theme.of(context).primaryColor;
