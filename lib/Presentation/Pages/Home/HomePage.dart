@@ -15,12 +15,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return  Scaffold(
 
-      body:SingleChildScrollView(
-        child: Column(
-          children: [
-            TopBar(),
-            AccordionWidget()
-          ],
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            children:  [
+              TopBar(),
+              AccordionWidget()
+            ],
+          ),
         ),
       )
 

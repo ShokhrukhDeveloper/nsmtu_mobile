@@ -1,16 +1,21 @@
 import 'package:accordion/accordion.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nsmtu_mobile/Presentation/Styles/AppTextStyle.dart';
+import 'package:nsmtu_mobile/Presentation/Widgets/AccordionWidget/AccordionContentButton.dart';
+
+import 'AccordionHeaderWidget.dart';
 
 class AccordionWidget extends StatelessWidget {
-  const AccordionWidget({Key? key}) : super(key: key);
+   AccordionWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black12),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.white54,
             blurRadius: 0.5,
@@ -27,6 +32,19 @@ class AccordionWidget extends StatelessWidget {
           paddingBetweenClosedSections:0,
           children: List.generate(6, (index) =>
               AccordionSection(
+                onOpenSection: (){
+                  debugPrint("Sosoodoososdodso");
+                },
+                flipRightIconIfOpen: true,
+                rightIcon: Container(
+                  height: 40,
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        top: BorderSide(color: Colors.black26)
+                      )
+                    ),
+
+                    child: const Icon(Icons.keyboard_arrow_down_sharp)),
                 contentBorderRadius: 0,
                 contentBorderWidth: 0,
                 headerBorderRadius: 0,
@@ -34,29 +52,14 @@ class AccordionWidget extends StatelessWidget {
                 headerPadding: EdgeInsets.zero,
                 paddingBetweenClosedSections: 0,
                 headerBackgroundColor: Colors.white,
-          header: Container(
-            height: 40,
-            padding: EdgeInsets.only(left: 10),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                border: Border(
-                  top: BorderSide(color: Colors.black26),
-                  left: BorderSide(color: Colors.black26),
-                  right: BorderSide(color: Colors.black26),
-
-                )
-              ),
-              child: const Text("Blag")),
+          header: AccordionHeaderWidget(text: 'Asosiy',
+            image:   Icon(Icons.adb_rounded,
+            color: Theme.of(context).primaryColor,
+            size: 36,
+          ),),
 
           content: Column(
-            children: [
-              Text("sALOMLAE"),
-              Text("sALOMLAE"),
-              Text("sALOMLAE"),
-              Text("sALOMLAE"),
-              Text("sALOMLAE"),
-              Text("sALOMLAE"),
-            ],
+            children:  List.generate(5, (index) => AccordionContentButton(text: "",)),
           ))),
       ),
     );
