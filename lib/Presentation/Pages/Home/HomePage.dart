@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/AccordionWidget/AccordionWidget.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/FooterWidget/FooterWidget.dart';
+import 'package:nsmtu_mobile/Presentation/Widgets/ImageSlideshowWidget/ImageSlideshowWidget.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/TopBarWidget/TopBarWidget.dart';
 
 
@@ -15,20 +16,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
             children:  [
-              TopBar(),
+              const TopBar(),
+              const ImageSlideShowWidget(),
               AccordionWidget(),
-              FooterWidget()
+              const FooterWidget()
             ],
           ),
         ),
       )
-
-
     );
   }
 }

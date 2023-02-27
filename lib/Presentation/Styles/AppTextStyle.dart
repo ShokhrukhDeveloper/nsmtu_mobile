@@ -19,6 +19,12 @@ class AppTextStyle{
     color: Colors.white
   );
 
+   static  TextStyle  styleImageSlideshowContent= const TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 22,
+    color: Colors.white
+  );
+
   static  TextStyle  styleFooterContactContent= const TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 18,
