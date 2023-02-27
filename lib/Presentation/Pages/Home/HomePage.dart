@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:nsmtu_mobile/Presentation/Widgets/AccordionWidget/AccordionWidget.dart';
+import 'package:nsmtu_mobile/Presentation/Widgets/FooterWidget/FooterWidget.dart';
+import 'package:nsmtu_mobile/Presentation/Widgets/TopBarWidget/TopBarWidget.dart';
 
-import '../../Widgets/AccordionWidget/AccordionWidget.dart';
-import '../../Widgets/TopBarWidget/TopBarWidget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,7 +21,8 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children:  [
               TopBar(),
-              AccordionWidget()
+              AccordionWidget(),
+              FooterWidget()
             ],
           ),
         ),
