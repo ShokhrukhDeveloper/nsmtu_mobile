@@ -40,7 +40,12 @@ class AppTextStyle{
     fontSize: 15,
     color: Colors.deepPurple.shade900
   );
-  static  TextStyle  styleNewsDate =  TextStyle(
+  static  TextStyle  styleAnnouncementContent=  TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 16,
+    color: Colors.deepPurple.shade900
+  );
+  static  TextStyle  styleNewsDate  =  TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: 15,
     color: Colors.deepPurple.shade700

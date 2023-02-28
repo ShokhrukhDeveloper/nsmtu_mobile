@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/AccordionWidget/AccordionWidget.dart';
+import 'package:nsmtu_mobile/Presentation/Widgets/AnnouncementWidget/AnnouncementWidget.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/FooterWidget/FooterWidget.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/ImageSlideshowWidget/ImageSlideshowWidget.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/NewsWidget/NewsWidget.dart';
@@ -23,6 +24,7 @@ class _HomePageState extends State<HomePage> {
             children:  [
               const TopBar(),
               AccordionWidget(),
+              const AnnouncementWidget(),
               const ImageSlideShowWidget(),
               const NewsWidget(),
               const FooterWidget()
