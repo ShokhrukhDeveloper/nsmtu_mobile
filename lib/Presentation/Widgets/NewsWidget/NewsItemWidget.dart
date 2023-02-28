@@ -33,7 +33,7 @@ String text="Navoiy davlat konchilik va texnologiyalar universiteti magistratura
             ),
             ),
           ),
-          Divider(),
+          const Divider(),
           Padding(
             padding: const EdgeInsets.only(bottom: 4.0,left: 4.0,right: 4.0),
             child: Row(
@@ -42,7 +42,7 @@ String text="Navoiy davlat konchilik va texnologiyalar universiteti magistratura
                 Row(
                   children: [
                     const Icon(Icons.date_range,size: 20,),
-                    SizedBox(width: 5,),
+                    const SizedBox(width: 5,),
                     Text("2023-02-16 15:14:20",style: AppTextStyle.styleNewsDate,),
                   ],
                 ),

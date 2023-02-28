@@ -50,6 +50,11 @@ class AppTextStyle{
     fontSize: 15,
     color: Colors.deepPurple.shade700
   );
+  static  TextStyle  styleRecommendedLinkText  =  const TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 14,
+    color: Colors.black87
+  );
 
 
 
