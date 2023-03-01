@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.nsmtu_mobile">
+    package="com.nsmtu.mobile">
    <application
-        android:label="nsmtu_mobile"
+        android:label="N.D.K.T.U"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

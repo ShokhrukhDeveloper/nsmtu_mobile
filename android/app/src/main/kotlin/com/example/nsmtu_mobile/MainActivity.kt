@@ -1,4 +1,4 @@
-package com.example.nsmtu_mobile
+package com.nsmtu.mobile
 
 import io.flutter.embedding.android.FlutterActivity
 
