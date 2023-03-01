@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nsmtu_mobile/Presentation/Pages/Home/HomePage.dart';
-
 void main() {
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
@@ -12,10 +10,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Navoiy Davlat Konchilik va Texnologiylari Universeteti',
       theme: ThemeData(
-        primaryColor: Colors.indigo
+        primaryColor: Colors.indigo.withOpacity(0.6)
       ),
       home: const HomePage()
     );
   }
 }
-

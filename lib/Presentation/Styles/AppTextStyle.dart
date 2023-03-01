@@ -3,39 +3,39 @@
 import 'package:flutter/material.dart';
 
 class AppTextStyle{
-  static  TextStyle  styleHeaderAccordion= const TextStyle(
+  static const TextStyle  styleHeaderAccordion=  TextStyle(
     fontWeight: FontWeight.w600,
     fontSize: 18,
     color: Colors.indigo
   );
-  static  TextStyle  styleContentAccordion= const TextStyle(
+  static const TextStyle  styleContentAccordion=  TextStyle(
     fontWeight: FontWeight.w500,
     fontSize: 16,
     color: Colors.indigo
   );
-  static  TextStyle  styleFooterContactHeader= const TextStyle(
+  static const TextStyle  styleFooterContactHeader=  TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: 20,
     color: Colors.white
   );
 
-   static  TextStyle  styleImageSlideshowContent= const TextStyle(
+   static const TextStyle  styleImageSlideshowContent=  TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 22,
     color: Colors.white
   );
 
-  static  TextStyle  styleFooterContactContent= const TextStyle(
+  static const  TextStyle  styleFooterContactContent =  TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 18,
     color: Colors.white
   );
-  static  TextStyle  styleFooterAboutUsContent= const TextStyle(
+  static const TextStyle  styleFooterAboutUsContent=  TextStyle(
     fontWeight: FontWeight.w500,
     fontSize: 16,
     color: Colors.white
   );
-  static  TextStyle  styleNewsContent=  TextStyle(
+  static  TextStyle  styleNewsContent =  TextStyle(
     fontWeight: FontWeight.w500,
     fontSize: 15,
     color: Colors.deepPurple.shade900
@@ -50,7 +50,7 @@ class AppTextStyle{
     fontSize: 15,
     color: Colors.deepPurple.shade700
   );
-  static  TextStyle  styleRecommendedLinkText  =  const TextStyle(
+  static const TextStyle  styleRecommendedLinkText  =   TextStyle(
     fontWeight: FontWeight.w600,
     fontSize: 14,
     color: Colors.black87
