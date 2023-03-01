@@ -16,7 +16,9 @@ class MenuBarWidget extends StatelessWidget {
               height: 20,
               color: Theme.of(context).primaryColor,
               child: DropdownButtonHideUnderline(
+
                 child: DropdownButton<String>(
+
                   icon:  const Icon(
                     Icons.keyboard_arrow_down_sharp,
                     color: Colors.white),
