@@ -55,6 +55,11 @@ class AppTextStyle{
     fontSize: 14,
     color: Colors.black87
   );
+  static const TextStyle  styleDepartmentText  =   TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 16,
+    color: Colors.black87
+  );
 
 
 

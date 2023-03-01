@@ -10,7 +10,7 @@ class RecommendedLinksWidget extends StatelessWidget {
           border: Border.all(color: Colors.black12.withOpacity(0.05))
       ),
       margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-      padding: const EdgeInsets.all(5),
+      padding: const EdgeInsets.symmetric(horizontal: 1),
       child: Column(
         children: [
           Row(

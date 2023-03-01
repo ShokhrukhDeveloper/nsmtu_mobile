@@ -10,7 +10,7 @@ final VoidCallback? onTap;
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(5),
-      padding: const EdgeInsets.only(top: 5),
+      padding: const EdgeInsets.only(top: 0),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(5),
