@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:nsmtu_mobile/Presentation/GetX/Controllers/HomeController.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/AccordionWidget/AccordionWidget.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/AnnouncementWidget/AnnouncementWidget.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/DepartureWidget/DepartureWidget.dart';
@@ -19,23 +21,27 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            children:  [
-              const TopBar(),
-              AccordionWidget(),
-              const DepartureWidget(),
-              const RecommendedLinksWidget(),
-              const AnnouncementWidget(),
-              const ImageSlideShowWidget(),
-              const NewsWidget(),
-              const FooterWidget()
-            ],
-          ),
-        ),
-      )
+    return  GetBuilder<HomeController>(
+      builder: (cont) {
+        return Scaffold(
+          body: SingleChildScrollView(
+            child: SafeArea(
+              child: Column(
+                children:  [
+                  const TopBar(),
+                  AccordionWidget(controller: cont,),
+                  const DepartureWidget(),
+                  const RecommendedLinksWidget(),
+                  const AnnouncementWidget(),
+                  const ImageSlideShowWidget(),
+                  const NewsWidget(),
+                  const FooterWidget()
+                ],
+              ),
+            ),
+          )
+        );
+      }
     );
   }
 }

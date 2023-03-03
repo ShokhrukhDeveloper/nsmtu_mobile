@@ -1,8 +1,8 @@
-class appURL {
+class AppUrls {
   // static baseURL = "http://127.0.0.1:8000/api";
   static const String baseURL = "https://admin.nsumt.uz/api";
   // static baseURL = "https://admin.nsmtu.uz/api";
-  static const String VisitorDetails = "$baseURL/getvisitor";
+  static const String visitorDetails = "$baseURL/getvisitor";
   static const String allSlider = "$baseURL/allslider";
   static const String allCategory = "$baseURL/allcategory";
   static const String allVerCategory = "$baseURL/allvercategory";

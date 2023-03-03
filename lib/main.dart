@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:nsmtu_mobile/Presentation/GetX/Routes/AppPages.dart';
+import 'package:nsmtu_mobile/Presentation/GetX/Bindings/HomeBinding.dart';
 import 'package:nsmtu_mobile/Presentation/Pages/Home/HomePage.dart';
 
 import 'Presentation/Pages/General/GeneralPage.dart';
@@ -10,14 +13,16 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Navoiy Davlat Konchilik va Texnologiylari Universeteti',
+    return GetMaterialApp(
+      title: 'Navoiy Davlat Konchilik va Texnologiylar Universeteti',
       theme: ThemeData(
         primaryColor: Colors.indigo
       ),
+      initialBinding: HomeBinding(),
       home: const LimitedBox(
           maxWidth: 500,
-          child: SplashScreen())
+          child: SplashScreen()),
+      getPages: AppPages.pages,
     );
   }
 }

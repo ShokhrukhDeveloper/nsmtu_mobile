@@ -37,7 +37,9 @@ dependencies:
 #  Html text renderer
   flutter_html: ^2.2.1
 # api caller
-  dio: ^5.0.1
+  http: ^0.13.5
+# state management
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:
