@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:nsmtu_mobile/Presentation/Pages/Home/HomePage.dart';
 
@@ -21,7 +20,6 @@ class _SplashScreenState extends State<SplashScreen> {
    await Future.delayed(const Duration(seconds: 1));
    start=true;
    setState(() {
-
    });
 
    await Future.delayed(const Duration(seconds: 1));
@@ -35,9 +33,12 @@ class _SplashScreenState extends State<SplashScreen> {
 
    });
    await Future.delayed(const Duration(seconds: 3));
-   Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_){
-     return const HomePage();
-   }), (route) => false);
+   next();
+  }
+  void next(){
+    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_){
+      return const HomePage();
+    }), (route) => false);
   }
 
   @override
