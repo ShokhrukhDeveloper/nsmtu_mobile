@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nsmtu_mobile/Presentation/Styles/AppTextStyle.dart';
+import 'package:nsmtu_mobile/Data/Styles/AppTextStyle.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/NewsWidget/NewsItemWidget.dart';
 class NewsWidget extends StatelessWidget {
   const NewsWidget({Key? key}) : super(key: key);

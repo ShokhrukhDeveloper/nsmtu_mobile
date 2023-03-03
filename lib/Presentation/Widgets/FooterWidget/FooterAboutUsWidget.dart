@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nsmtu_mobile/Presentation/Styles/AppTextStyle.dart';
+import 'package:nsmtu_mobile/Data/Styles/AppTextStyle.dart';
 class FooterAboutUsWidget extends StatelessWidget {
    FooterAboutUsWidget({Key? key}) : super(key: key);
 String text="LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT. ALIQUID ASPERNATUR ASSUMENDA BEATAE DIGNISSIMOS DOLOREM, DOLORES ERROR EX MOLESTIAS PARIATUR PERSPICIATIS PROVIDENT QUAS QUIDEM QUISQUAM SEQUI SUNT TEMPORA TEMPORE VEL VERITATIS.";

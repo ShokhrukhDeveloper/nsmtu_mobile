@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-import 'package:nsmtu_mobile/Presentation/Styles/AppTextStyle.dart';
+import 'package:nsmtu_mobile/Data/Styles/AppTextStyle.dart';
 
 class ImageSlideShowWidget extends StatelessWidget {
   const ImageSlideShowWidget({Key? key}) : super(key: key);

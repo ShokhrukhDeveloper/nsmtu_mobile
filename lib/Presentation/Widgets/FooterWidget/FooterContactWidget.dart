@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nsmtu_mobile/Presentation/Styles/AppTextStyle.dart';
+import 'package:nsmtu_mobile/Data/Styles/AppTextStyle.dart';
 class FooterContactWidget extends StatelessWidget {
   FooterContactWidget({Key? key,required this.items,required this.icon,required this.header}) : super(key: key);
   String header;

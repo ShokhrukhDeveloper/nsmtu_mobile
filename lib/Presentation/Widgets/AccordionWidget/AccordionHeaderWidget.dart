@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nsmtu_mobile/Presentation/Styles/AppTextStyle.dart';
+import 'package:nsmtu_mobile/Data/Styles/AppTextStyle.dart';
 
 class AccordionHeaderWidget extends StatelessWidget {
   String text;

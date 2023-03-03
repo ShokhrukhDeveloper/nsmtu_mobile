@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nsmtu_mobile/Presentation/Styles/AppTextStyle.dart';
+import 'package:nsmtu_mobile/Data/Styles/AppTextStyle.dart';
+
+import 'package:nsmtu_mobile/Data/Styles/AppTextStyle.dart';
 class AccordionContentButton extends StatelessWidget {
    String text;
    VoidCallback? onTap;

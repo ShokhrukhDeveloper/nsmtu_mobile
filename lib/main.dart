@@ -15,7 +15,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.indigo
       ),
-      home: const SplashScreen()
+      home: const LimitedBox(
+          maxWidth: 500,
+          child: SplashScreen())
     );
   }
 }

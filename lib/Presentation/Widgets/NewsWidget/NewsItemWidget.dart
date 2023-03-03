@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nsmtu_mobile/Presentation/Styles/AppTextStyle.dart';
+import 'package:nsmtu_mobile/Data/Styles/AppTextStyle.dart';
 class NewsItemWidget extends StatelessWidget {
    NewsItemWidget({Key? key}) : super(key: key);
 String text="Navoiy davlat konchilik va texnologiyalar universiteti magistratura mutaxassisliklariga 2022/2023 Navoiy davlat konchilik va texnologiyalar universiteti magistratura mutaxassisliklariga 2022/2023 ";
