@@ -1,21 +1,27 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:nsmtu_mobile/Data/Utility/CustomApiException/BadRequestException.dart';
 import 'package:nsmtu_mobile/Data/Utility/CustomApiException/FetchDataException.dart';
 import 'package:nsmtu_mobile/Data/Utility/CustomApiException/UnauthorisedException.dart';
 import 'IRepositoryBase.dart';
 
-abstract class ApiRepositoryBase<T> extends IRepositoryBase<T> {
-  Future<Map> get(String url, {Map<String, String>? headers})async =>
+abstract class ApiRepositoryBase extends IRepositoryBase {
+  Future<String> get(String url, {Map<String, String>? headers})async =>
        _response(await http.get(Uri.parse(url), headers: headers));
 
-  Future<Map> post(String url, {Map<String, String>? headers, Object? body, Encoding? encoding})async =>
-       _response(await http.post(Uri.parse(url), headers: headers,body: body,encoding: encoding));
-  Map<String,dynamic> _response(http.Response response){
+  Future<String> post(String url, {Map<String, String>? headers, Object? body, Encoding? encoding})async =>
+
+      _response(await http.post(Uri.parse(url), headers: headers,body: body,encoding: encoding));
+  String _response(http.Response response){
+
+    debugPrint(response.statusCode.toString());
+    debugPrint(response.body);
+
     switch(response.statusCode){
       case 200:
-        var resJson=jsonDecode(response.body);
+        var resJson=response.body;
         return resJson;
       case 400:
         throw BadRequestException(response.body);

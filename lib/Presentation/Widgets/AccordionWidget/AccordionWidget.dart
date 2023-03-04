@@ -1,8 +1,8 @@
 import 'package:accordion/accordion.dart';
+import 'package:accordion/controllers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:nsmtu_mobile/Data/Entities/VerCategories.dart';
 import 'package:nsmtu_mobile/Presentation/GetX/Controllers/HomeController.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/AccordionWidget/AccordionContentButton.dart';
 import 'package:get/get.dart';
@@ -12,9 +12,11 @@ import 'AccordionHeaderWidget.dart';
 class AccordionWidget extends StatelessWidget {
   const AccordionWidget({Key? key, required this.controller}) : super(key: key);
   final HomeController controller;
+
   @override
   Widget build(BuildContext context) {
-   var data= controller.accordion.data.value?.versubcategoryUz;
+
+   // print(data);
     return Container(
       margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
@@ -29,18 +31,16 @@ class AccordionWidget extends StatelessWidget {
         ]
       ),
       child: Obx(
-        ()=>controller.accordion.data.value!=null? Accordion(
+        ()=>controller.showAccordionMenu.value?Accordion(
+          disableScrolling: true,
           paddingBetweenOpenSections: 0,
             paddingListBottom: 0,
             paddingListHorizontal: 0,
             paddingListTop: 0,
             paddingBetweenClosedSections:0,
-            children: data!=null?
-            data.map<AccordionSection>( (index) =>
+            children: controller.verCategories.map<AccordionSection>( (index) =>
                 AccordionSection(
-                  onOpenSection: (){
-
-                  },
+                    scrollIntoViewOfItems: ScrollIntoViewOfItems.none,
                   flipRightIconIfOpen: true,
                   rightIcon: Container(
                     height: 40,
@@ -58,17 +58,22 @@ class AccordionWidget extends StatelessWidget {
                   headerPadding: EdgeInsets.zero,
                   paddingBetweenClosedSections: 0,
                   headerBackgroundColor: Colors.white,
-            header: AccordionHeaderWidget(text: 'Asosiy',
-              image:   Icon(Icons.adb_rounded,
+            header: AccordionHeaderWidget(
+
+              text: index.verCategoryUz.toString(),
+              image:   Image.network(index.photo??"",
               color: Theme.of(context).primaryColor,
-              size: 36,
+              width: 35, height: 36,
             ),),
 
             content: Column(
-              children:  List.generate(5, (index) => AccordionContentButton(text: "",)),
+
+              children:
+              index.versubcategoryUz?.map( (i) => AccordionContentButton(text: i.subVercategoryUz.toString(),)).toList()??[],
             ))
-            ).toList():[],
-        ):const SizedBox(),
+            ).toList()
+            ,
+        ):const SizedBox()
       ),
     );
   }

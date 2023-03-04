@@ -20,7 +20,7 @@ class AccordionContentButton extends StatelessWidget {
        onPressed: (){},
        child:  SizedBox(
            width: double.infinity,
-           child: Text("Universitet tuzilmasi", style: AppTextStyle.styleContentAccordion,)),
+           child: Text(text, style: AppTextStyle.styleContentAccordion,)),
      ) );
    }
  }

@@ -1,8 +1,8 @@
-import 'package:nsmtu_mobile/Data/Entities/VerCategories.dart';
+
 import 'package:nsmtu_mobile/Data/Repositories/ApiRepositoryBase.dart';
 import 'package:nsmtu_mobile/Data/Urls/AppUrls.dart';
 
-class VerCategoryRepository extends ApiRepositoryBase<VerCategories>{
+class VerCategoryRepository extends ApiRepositoryBase{
   @override
-  Future<VerCategories> getData(String url) async =>VerCategories.fromJson( await get(AppUrls.allVerCategory));
+  Future<String> getData() async => await get(AppUrls.allVerCategory);
 }
