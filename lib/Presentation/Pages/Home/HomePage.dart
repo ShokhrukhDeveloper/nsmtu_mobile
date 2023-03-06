@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
                 children:  [
                   const TopBar(),
                   AccordionWidget(controller: cont,),
-                  const DepartureWidget(),
+                  DepartureWidget(controller: cont,),
                   const RecommendedLinksWidget(),
                   const AnnouncementWidget(),
                   const ImageSlideShowWidget(),

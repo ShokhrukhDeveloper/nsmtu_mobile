@@ -8,7 +8,7 @@ class DepartureItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 3),
+      padding: const EdgeInsets.symmetric(vertical: 3),
     decoration: const BoxDecoration(
       border: Border(bottom:BorderSide(color: Colors.blueAccent))
     ),
