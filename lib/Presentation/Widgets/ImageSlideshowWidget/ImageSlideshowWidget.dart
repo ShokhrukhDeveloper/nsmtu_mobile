@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:get/get.dart';
 import 'package:nsmtu_mobile/Data/Styles/AppTextStyle.dart';
+import 'package:nsmtu_mobile/Presentation/GetX/Controllers/HomeController.dart';
 
 class ImageSlideShowWidget extends StatelessWidget {
-  const ImageSlideShowWidget({Key? key}) : super(key: key);
-
+  const ImageSlideShowWidget({Key? key, required this.controller}) : super(key: key);
+final HomeController controller;
   @override
   Widget build(BuildContext context) {
-    return ImageSlideshow(children: [
-      image(
-          url: "https://picsum.photos/800/300",
-          text: "Talabalar teatr sudiosi",
-          context: context),
-      image(
-          url: "https://picsum.photos/800/300",
-          text: "Talabalar teatr sudiosi",
-          context: context),
-      image(
-          url: "https://picsum.photos/800/300",
-          text: "Talabalar teatr sudiosi",
-          context: context),
-    ]);
+    return Obx(
+        ()=> ImageSlideshow(children:[
+        if(controller.showImageSlide.value)...controller.imageSlides.map((e) => image(url: e.sliderImg??'', text: e.title??"", context: context)).toList()
+      ]
+      ),
+    );
   }
 
   Widget image(

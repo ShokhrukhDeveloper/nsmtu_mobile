@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
                   DepartureWidget(controller: cont,),
                   const RecommendedLinksWidget(),
                   const AnnouncementWidget(),
-                  const ImageSlideShowWidget(),
+                   ImageSlideShowWidget(controller: cont,),
                   const NewsWidget(),
                   const FooterWidget()
                 ],
