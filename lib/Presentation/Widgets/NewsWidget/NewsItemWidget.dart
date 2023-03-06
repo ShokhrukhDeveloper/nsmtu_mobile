@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nsmtu_mobile/Data/Styles/AppTextStyle.dart';
 class NewsItemWidget extends StatelessWidget {
-   NewsItemWidget({Key? key}) : super(key: key);
+  final String content;
+  final String imgUrl;
+  final String date;
+   NewsItemWidget({Key? key, required this.content, required this.imgUrl, required this.date}) : super(key: key);
 String text="Navoiy davlat konchilik va texnologiyalar universiteti magistratura mutaxassisliklariga 2022/2023 Navoiy davlat konchilik va texnologiyalar universiteti magistratura mutaxassisliklariga 2022/2023 ";
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,7 @@ String text="Navoiy davlat konchilik va texnologiyalar universiteti magistratura
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(5),
-            child: Image.network("https://picsum.photos/400/300",
+            child: Image.network(imgUrl,
               
               height: 250,width: double.infinity,fit: BoxFit.cover,),
           ),
@@ -27,7 +30,7 @@ String text="Navoiy davlat konchilik va texnologiyalar universiteti magistratura
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-              text,
+              content,
               style: AppTextStyle.styleNewsContent,
                 overflow: TextOverflow.fade,
             ),
@@ -43,7 +46,7 @@ String text="Navoiy davlat konchilik va texnologiyalar universiteti magistratura
                   children: [
                     const Icon(Icons.date_range,size: 20,),
                     const SizedBox(width: 5,),
-                    Text("2023-02-16 15:14:20",style: AppTextStyle.styleNewsDate,),
+                    Text(date,style: AppTextStyle.styleNewsDate,),
                   ],
                 ),
 

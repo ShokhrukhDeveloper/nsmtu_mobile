@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:nsmtu_mobile/Data/Styles/AppTextStyle.dart';
+import 'package:nsmtu_mobile/Presentation/GetX/Controllers/HomeController.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/NewsWidget/NewsItemWidget.dart';
 class NewsWidget extends StatelessWidget {
-  const NewsWidget({Key? key}) : super(key: key);
-
+  const NewsWidget({Key? key, required this.controller}) : super(key: key);
+  final HomeController controller;
   @override
   Widget build(BuildContext context) {
     return  Container(
@@ -40,15 +42,21 @@ mainAxisAlignment: MainAxisAlignment.spaceBetween,
               )
             ],
           ),
-          Wrap(
-            alignment: WrapAlignment.center,
-            runAlignment: WrapAlignment.center,
-            children:  [
-              NewsItemWidget(),
-              NewsItemWidget(),
-              NewsItemWidget(),
-              NewsItemWidget(),
-            ],
+          Obx(
+            () {
+              return Wrap(
+                alignment: WrapAlignment.center,
+                runAlignment: WrapAlignment.center,
+                children:  [
+                  if(controller.showNews.value)...
+                  controller.news.map((e) => NewsItemWidget(content: e.titleUz??"", imgUrl: e.img??"", date: e.updateAt??"",)).toList()
+                  ,
+                  // NewsItemWidget(),
+                  // NewsItemWidget(),
+                  // NewsItemWidget(),
+                ],
+              );
+            }
           )
 
 
