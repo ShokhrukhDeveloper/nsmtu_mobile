@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:nsmtu_mobile/Presentation/GetX/Routes/AppPages.dart';
 import 'package:nsmtu_mobile/Presentation/GetX/Bindings/HomeBinding.dart';
+import 'package:nsmtu_mobile/Presentation/GetX/Routes/AppRoutes.dart';
 import 'package:nsmtu_mobile/Presentation/Pages/Home/HomePage.dart';
 
 import 'Presentation/Pages/General/GeneralPage.dart';
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialRoute: "/home",
       title: 'Navoiy Davlat Konchilik va Texnologiylar Universeteti',
       theme: ThemeData(
         primaryColor: Colors.indigo

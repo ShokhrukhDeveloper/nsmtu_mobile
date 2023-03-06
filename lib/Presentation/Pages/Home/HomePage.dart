@@ -29,12 +29,12 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children:  [
                   const TopBar(),
-                  AccordionWidget(controller: cont,),
-                  DepartureWidget(controller: cont,),
+                  const AccordionWidget(),
+                  const DepartureWidget(),
                   const RecommendedLinksWidget(),
-                  const AnnouncementWidget(),
+                  // const AnnouncementWidget(),
                    ImageSlideShowWidget(controller: cont,),
-                   NewsWidget(controller: cont,),
+                   const NewsWidget(),
                   const FooterWidget()
                 ],
               ),

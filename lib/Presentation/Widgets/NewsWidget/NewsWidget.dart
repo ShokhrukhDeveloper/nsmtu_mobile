@@ -1,11 +1,45 @@
+import 'dart:convert';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nsmtu_mobile/Data/Entities/News.dart';
+import 'package:nsmtu_mobile/Data/Repositories/NewsRepository.dart';
 import 'package:nsmtu_mobile/Data/Styles/AppTextStyle.dart';
 import 'package:nsmtu_mobile/Presentation/GetX/Controllers/HomeController.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/NewsWidget/NewsItemWidget.dart';
-class NewsWidget extends StatelessWidget {
-  const NewsWidget({Key? key, required this.controller}) : super(key: key);
-  final HomeController controller;
+class NewsWidget extends StatefulWidget {
+  const NewsWidget({Key? key,}) : super(key: key);
+
+
+  @override
+  State<NewsWidget> createState() => _NewsWidgetState();
+}
+
+class _NewsWidgetState extends State<NewsWidget> {
+  static List<News> _news=[];
+  var showNews=false.obs;
+  late NewsRepository newsRepository;
+  Future<void> getNews()async{
+    try{
+      var res = await newsRepository.getData();
+      var re= jsonDecode(res);
+      if(re is List){
+        _news=re.map((e) => News.fromJson(e)).toList();
+        showNews(true);}
+    }catch (e){
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+
+  }
+  @override
+  void initState() {
+    newsRepository=NewsRepository();
+    getNews();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return  Container(
@@ -48,12 +82,8 @@ mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 alignment: WrapAlignment.center,
                 runAlignment: WrapAlignment.center,
                 children:  [
-                  if(controller.showNews.value)...
-                  controller.news.map((e) => NewsItemWidget(content: e.titleUz??"", imgUrl: e.img??"", date: e.updateAt??"",)).toList()
-                  ,
-                  // NewsItemWidget(),
-                  // NewsItemWidget(),
-                  // NewsItemWidget(),
+                  if(showNews.value)...
+                 _news.map((e) => NewsItemWidget(content: e.titleUz??"", imgUrl: e.img??"", date: e.updateAt??"",)).toList()
                 ],
               );
             }

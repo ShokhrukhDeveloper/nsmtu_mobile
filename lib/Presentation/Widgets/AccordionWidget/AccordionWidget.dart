@@ -1,18 +1,57 @@
+import 'dart:convert';
+
 import 'package:accordion/accordion.dart';
 import 'package:accordion/controllers.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:nsmtu_mobile/Data/Entities/VerCategory.dart';
+import 'package:nsmtu_mobile/Data/Repositories/VerCategoryRepository.dart';
 import 'package:nsmtu_mobile/Presentation/GetX/Controllers/HomeController.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/AccordionWidget/AccordionContentButton.dart';
 import 'package:get/get.dart';
 
 import 'AccordionHeaderWidget.dart';
 
-class AccordionWidget extends StatelessWidget {
-  const AccordionWidget({Key? key, required this.controller}) : super(key: key);
-  final HomeController controller;
+class AccordionWidget extends StatefulWidget {
+  const AccordionWidget({Key? key}) : super(key: key);
 
+
+  @override
+  State<AccordionWidget> createState() => _AccordionWidgetState();
+}
+
+class _AccordionWidgetState extends State<AccordionWidget> {
+  late VerCategoryRepository verCategoryRepository;
+  Future<void> getVerCategory()async{
+    if(_verCategories.isNotEmpty){
+      showAccordionMenu(true);
+      return;
+    }
+    try{
+      var res = await verCategoryRepository.getData();
+      var re= jsonDecode(res);
+      if(re is List){
+        _verCategories=re.map((e) => VerCategory.fromJson(e)).toList();
+        showAccordionMenu(true);}
+    }catch (e){
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+
+  }
+  var showAccordionMenu=false.obs;
+  static List<VerCategory> _verCategories=[];
+
+  @override
+  void initState() {
+    verCategoryRepository=VerCategoryRepository();
+    getVerCategory();
+    // TODO: implement initState
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     // print(data);
@@ -27,7 +66,7 @@ class AccordionWidget extends StatelessWidget {
                 offset: Offset(0.3, 0.3),
                 spreadRadius: 0.3)
           ]),
-      child: Obx(() => controller.showAccordionMenu.value
+      child: Obx(() => showAccordionMenu.value
           ? Accordion(
               disableScrolling: true,
               paddingBetweenOpenSections: 0,
@@ -35,7 +74,7 @@ class AccordionWidget extends StatelessWidget {
               paddingListHorizontal: 0,
               paddingListTop: 0,
               paddingBetweenClosedSections: 0,
-              children: controller.verCategories
+              children: _verCategories
                   .map<AccordionSection>((index) => AccordionSection(
                       scrollIntoViewOfItems: ScrollIntoViewOfItems.none,
                       flipRightIconIfOpen: true,

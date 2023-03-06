@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
+import 'package:nsmtu_mobile/Presentation/GetX/Bindings/DepartureBinding.dart';
 import 'package:nsmtu_mobile/Presentation/GetX/Routes/AppRoutes.dart';
 import 'package:nsmtu_mobile/Presentation/GetX/Bindings/HomeBinding.dart';
+import 'package:nsmtu_mobile/Presentation/Pages/Departement/DepartmentPage.dart';
 import 'package:nsmtu_mobile/Presentation/Pages/Home/HomePage.dart';
 
 class AppPages{
@@ -9,6 +11,11 @@ class AppPages{
       name: AppRoutes.home,
       page: () => HomePage(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.departure,
+      page: () => const DeparturePage(),
+      binding: DepartureBinding(),
     ),
   ];
 }
