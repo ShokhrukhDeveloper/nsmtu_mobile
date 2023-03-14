@@ -4,6 +4,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
 import 'package:nsmtu_mobile/Presentation/GetX/Controllers/DepartureController.dart';
 import 'package:nsmtu_mobile/Presentation/Pages/Departement/DepartureLeaderInfoWidget.dart';
+import 'package:nsmtu_mobile/Presentation/Pages/Departement/DepartureTapBar.dart';
 import 'package:nsmtu_mobile/Presentation/Widgets/AccordionWidget/AccordionWidget.dart';
 
 import '../../Widgets/FooterWidget/FooterWidget.dart';
@@ -47,6 +48,8 @@ class _DeparturePageState extends State<DeparturePage> {
                         );
                       }
                     ),
+
+                    const DepartureTapbar(),
 
                     const FooterWidget()
                   ],

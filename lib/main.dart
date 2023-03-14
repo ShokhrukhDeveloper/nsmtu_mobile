@@ -15,15 +15,29 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+
       initialRoute: "/home",
       title: 'Navoiy Davlat Konchilik va Texnologiylar Universeteti',
       theme: ThemeData(
         primaryColor: Colors.indigo
       ),
       initialBinding: HomeBinding(),
-      home: const LimitedBox(
-          maxWidth: 500,
-          child: SplashScreen()),
+      home: MaterialApp(
+       theme: ThemeData(
+            brightness: Brightness.light,
+            // add tabBarTheme
+            tabBarTheme:  TabBarTheme(
+
+                labelStyle: TextStyle(color: Colors.pink[800]), // color for text
+                indicator: UnderlineTabIndicator( // color for indicator (underline)
+                    borderSide: BorderSide(color: Theme.of(context).primaryColor))),
+            primaryColor: Colors.pink[800], // outdated and has no effect to Tabbar
+            accentColor: Colors.cyan[600] // deprecated,
+        ),
+        home: const LimitedBox(
+            maxWidth: 500,
+            child: SplashScreen()),
+      ),
       getPages: AppPages.pages,
     );
   }
